@@ -19,7 +19,7 @@ const mockPlayerXP = 2700;
 const mockPlayerRank = getRankByXP(mockPlayerXP);
 
 const mockPlayer = {
-  name: "luiz trigueiro",
+  name: "Ryan Blake",
   id: 5,
   stats: {
     kills: 11,
@@ -37,8 +37,8 @@ const mockLeaderboard = [
   { rank: 1, name: "PRO PLAYER", winRate: 78.5, kills: 156, playerRank: RANKS[17] },
   { rank: 2, name: "ELITE GAMER", winRate: 72.3, kills: 134, playerRank: RANKS[16] },
   { rank: 3, name: "SNIPER KING", winRate: 65.1, kills: 98, playerRank: RANKS[14] },
-  { rank: 4, name: "LUIZ TRI...", winRate: 33.3, kills: 11, playerRank: mockPlayerRank },
-  { rank: 5, name: "BAR DEV", winRate: 28.6, kills: 10, playerRank: RANKS[6] },
+  { rank: 4, name: "RYAN BLA...", winRate: 33.3, kills: 11, playerRank: mockPlayerRank },
+  { rank: 5, name: "JORDAN COLE", winRate: 28.6, kills: 10, playerRank: RANKS[6] },
 ];
 
 const mockHistory = [
@@ -47,8 +47,8 @@ const mockHistory = [
 ];
 
 const mockLobbyPlayers = [
-  { id: 1, name: "luiz trigueiro", ready: true, rank: mockPlayerRank, xp: mockPlayerXP, isLeader: true },
-  { id: 2, name: "bar dev", ready: false, rank: RANKS[6], xp: 1500, isLeader: false },
+  { id: 1, name: "Ryan Blake", ready: true, rank: mockPlayerRank, xp: mockPlayerXP, isLeader: true },
+  { id: 2, name: "Jordan Cole", ready: false, rank: RANKS[6], xp: 1500, isLeader: false },
 ];
 
 function generateTeamCode() {

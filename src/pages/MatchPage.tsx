@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const mockDuels = [
-  { id: "1", playerA: { id: 8, name: "DEV Doug" }, playerB: { id: 3, name: "Victor Malaquias" } },
-  { id: "2", playerA: { id: 5, name: "luiz trigueiro" }, playerB: { id: 6, name: "bar dev" } },
-  { id: "3", playerA: { id: 8, name: "DEV Doug" }, playerB: { id: 5, name: "luiz trigueiro" } },
+  { id: "1", playerA: { id: 8, name: "Marcus Reed" }, playerB: { id: 3, name: "Alex Stone" } },
+  { id: "2", playerA: { id: 5, name: "Ryan Blake" }, playerB: { id: 6, name: "Jordan Cole" } },
+  { id: "3", playerA: { id: 8, name: "Marcus Reed" }, playerB: { id: 5, name: "Ryan Blake" } },
 ];
 
 export default function MatchPage() {
