@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* FiveM Ranked CS:GO Style Design System */
+
+@layer base {
+  :root {
+    /* Dark gaming theme */
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Gold accent - Premium gaming style */
+    --primary: 45 100% 50%;
+    --primary-foreground: 0 0% 10%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 40 100% 45%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 45 100% 50%;
+
+    --radius: 0.25rem;
+
+    /* Custom gaming colors */
+    --glow-gold: 45 100% 50%;
+    --glow-green: 120 100% 40%;
+    --victory: 120 60% 45%;
+    --defeat: 0 72% 51%;
+    --gold: 45 100% 50%;
+    --team-a: 200 80% 50%;
+    --team-b: 30 100% 50%;
+
+    /* Glass effect */
+    --glass: 0 0% 10% / 0.85;
+    --glass-border: 0 0% 30% / 0.5;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Rajdhani', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 0.05em;
+  }
+}
+
+@layer components {
+  /* Glass panel effect */
+  .glass-panel {
+    @apply bg-card/90 backdrop-blur-md border border-border/50;
+    box-shadow: 
+      0 0 20px hsla(var(--primary) / 0.1),
+      inset 0 1px 0 hsla(0, 0%, 100%, 0.05);
+  }
+
+  /* Red glow border */
+  .glow-border {
+    @apply border border-primary/50;
+    box-shadow: 
+      0 0 10px hsla(var(--primary) / 0.3),
+      0 0 20px hsla(var(--primary) / 0.2),
+      inset 0 0 10px hsla(var(--primary) / 0.1);
+  }
+
+  .glow-border-intense {
+    @apply border-2 border-primary;
+    box-shadow: 
+      0 0 15px hsla(var(--primary) / 0.5),
+      0 0 30px hsla(var(--primary) / 0.3),
+      inset 0 0 15px hsla(var(--primary) / 0.2);
+  }
+
+  /* Victory/Defeat colors */
+  .glow-victory {
+    @apply border border-green-500/50;
+    box-shadow: 0 0 15px hsla(var(--victory) / 0.4);
+  }
+
+  .glow-defeat {
+    @apply border border-red-500/50;
+    box-shadow: 0 0 15px hsla(var(--defeat) / 0.4);
+  }
+
+  /* Stat card */
+  .stat-value {
+    font-family: 'Orbitron', sans-serif;
+    @apply text-2xl font-bold;
+  }
+
+  /* Gaming button */
+  .btn-gaming {
+    @apply relative overflow-hidden px-6 py-3 font-bold uppercase tracking-wider;
+    @apply bg-primary text-primary-foreground;
+    @apply transition-all duration-300;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+
+  .btn-gaming:hover {
+    @apply bg-primary/80;
+    box-shadow: 0 0 20px hsla(var(--primary) / 0.5);
+  }
+
+  .btn-gaming-outline {
+    @apply relative overflow-hidden px-6 py-3 font-bold uppercase tracking-wider;
+    @apply bg-transparent border-2 border-primary text-primary;
+    @apply transition-all duration-300;
+    clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+  }
+
+  .btn-gaming-outline:hover {
+    @apply bg-primary/20;
+    box-shadow: 0 0 20px hsla(var(--primary) / 0.3);
+  }
+
+  /* Map card */
+  .map-card {
+    @apply relative overflow-hidden cursor-pointer transition-all duration-300;
+    @apply border-2 border-transparent;
+  }
+
+  .map-card:hover {
+    @apply border-primary/50;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px hsla(var(--primary) / 0.2);
+  }
+
+  .map-card.selected {
+    @apply border-primary;
+    box-shadow: 0 0 20px hsla(var(--primary) / 0.4);
+  }
+
+  .map-card.banned {
+    @apply opacity-50 grayscale;
+  }
+
+  /* Item card for shop */
+  .item-card {
+    @apply relative p-3 cursor-pointer transition-all duration-200;
+    @apply bg-secondary/50 border border-border/50;
+  }
+
+  .item-card:hover {
+    @apply bg-secondary border-primary/50;
+  }
+
+  .item-card.selected {
+    @apply bg-primary/20 border-primary;
+  }
+
+  /* Timer circle */
+  .timer-circle {
+    @apply relative flex items-center justify-center;
+    @apply text-5xl font-bold;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  /* Scoreboard */
+  .score-box {
+    @apply px-4 py-2 text-2xl font-bold;
+    font-family: 'Orbitron', sans-serif;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 0 100%, 0 8px);
+  }
+
+  /* Player row */
+  .player-row {
+    @apply flex items-center gap-4 p-3;
+    @apply bg-card/60 border-l-4 border-transparent;
+    @apply transition-all duration-200;
+  }
+
+  .player-row:hover {
+    @apply bg-card border-l-primary;
+  }
+
+  /* Rank badge */
+  .rank-badge {
+    @apply flex items-center justify-center w-10 h-10;
+    @apply bg-primary text-primary-foreground font-bold;
+    font-family: 'Orbitron', sans-serif;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+}
