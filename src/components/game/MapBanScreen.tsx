@@ -129,11 +129,31 @@ export function MapBanScreen({ teamAName, teamBName, currentTurn, onBan, onClose
           </AnimatePresence>
         </div>
 
-        {/* Status */}
-        <div className="flex justify-between text-sm text-muted-foreground">
-          <span>Mapas disponíveis: {availableMaps.length}</span>
-          <span>Mapas banidos: {bannedMaps.length}</span>
+        {/* Status e configuração da partida (junto com o ban) */}
+        <div className="flex flex-wrap items-center justify-between gap-4 text-sm">
+          <div className="flex items-center gap-6 text-muted-foreground">
+            <span>Mapas disponíveis: {availableMaps.length}</span>
+            <span>Mapas banidos: {bannedMaps.length}</span>
+          </div>
+          <div className="flex items-center gap-6 text-muted-foreground">
+            <span>Valor da partida:</span>
+            <span className="font-display text-foreground text-lg">$0</span>
+            <span>Número de rounds:</span>
+            <span className="font-display text-foreground text-lg">1</span>
+          </div>
         </div>
+
+        {/* Arena selecionada: quando sobra só um mapa após os bans */}
+        {availableMaps.length === 1 && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-6 p-4 rounded-lg border-2 border-primary/50 bg-primary/10 text-center"
+          >
+            <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">Arena selecionada</p>
+            <p className="font-display text-xl font-bold text-primary">{availableMaps[0].name}</p>
+          </motion.div>
+        )}
       </div>
     </motion.div>
   );

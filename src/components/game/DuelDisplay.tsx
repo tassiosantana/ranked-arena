@@ -34,8 +34,8 @@ export function DuelDisplay({ duels }: DuelDisplayProps) {
             </div>
 
             {/* Weapon Icon */}
-            <div className="px-2">
-              <span className="text-xl">🔫</span>
+            <div className="px-2 flex items-center">
+              <Crosshair className="w-5 h-5 text-primary" />
             </div>
 
             {/* Player B */}

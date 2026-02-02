@@ -206,4 +206,24 @@
     font-family: 'Orbitron', sans-serif;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   }
+
+  /* Scrollbar do menu de compra - segue o padrão escuro do menu */
+  .scrollbar-menu {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) hsl(var(--muted));
+  }
+  .scrollbar-menu::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-menu::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  .scrollbar-menu::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 9999px;
+  }
+  .scrollbar-menu::-webkit-scrollbar-thumb:hover {
+    background: hsl(0 0% 28%);
+  }
 }

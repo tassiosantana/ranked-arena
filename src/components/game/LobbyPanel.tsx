@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Users, Play, LogOut, Crown, X } from "lucide-react";
+import { Users, Play, LogOut, Crown, X, Check } from "lucide-react";
 import { RankBadge } from "./RankBadge";
 import { RankProgress } from "./RankProgress";
 import { Rank } from "@/lib/ranks";
@@ -81,7 +81,9 @@ export function LobbyPanel({
                       <div className="flex items-center gap-2">
                         <span className="font-semibold truncate">{player.name}</span>
                         {player.ready && (
-                          <span className="text-xs text-victory uppercase font-bold">✓ Pronto</span>
+                          <span className="text-xs text-victory uppercase font-bold inline-flex items-center gap-1">
+                            <Check className="w-3.5 h-3.5" /> Pronto
+                          </span>
                         )}
                       </div>
                       <p className="text-xs text-muted-foreground">{player.rank.name}</p>
